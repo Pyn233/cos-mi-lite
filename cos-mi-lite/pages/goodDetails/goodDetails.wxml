@@ -1,0 +1,105 @@
+<!--pages/goodDetails/goodDetails.wxml-->
+<view class="page">
+
+   <!-- 商品轮滑图 -->
+   <view class="section swiper_view">
+      <swiper indicator-dots="true" autoplay="true" circular="true" style='height:825rpx'>
+         <block wx:for='{{goodData.swiper_img}}' wx:key="*this">
+            <swiper-item>
+               <image src='{{item}}' mode="widthFix" style='width:100%'></image>
+            </swiper-item>
+         </block>
+      </swiper>
+   </view>
+   <!-- end swiper_view -->
+
+
+   <view class='section name'>{{goodData.name}}</view>
+   <view class='section brief'>
+      <text wx:if="{{goodData.brief.length>1}}">{{goodData.brief[1]}}</text>{{goodData.brief[0]}}</view>
+   <view class='section price'>{{goodData.defaultData.price[0]}}
+      <text wx:if="{{goodData.defaultData.price.length>1}}">{{goodData.defaultData.price[1]}}</text>
+   </view>
+
+
+   <!-- 参数滑块 -->
+   <scroll-view class='section details' scroll-x>
+      <view class='details_param' wx:for='{{goodData.details_param}}' wx:key="*this">
+         <image src='{{item.imgSrc}}' mode='widthFix'></image>
+         <view>{{item.param}}</view>
+         <view>{{item.details}}</view>
+      </view>
+   </scroll-view>
+
+   <!-- end details -->
+
+
+   <!-- 促销 版本 及服务 -->
+   <view class='section good_info_choose_version'>
+      <view class="address" bindtap='chooseAddress'>
+         <text>送至</text>
+         <text>浙江省 杭州</text>
+         <text>有现货</text>
+      </view>
+      <view class="sales">
+         <text>促销</text>
+         <text>赠品</text>
+         <text>赠米粉卡，内含50元话费</text>
+      </view>
+      <view class="version" data-id="{{goodData.id}}" bindtap='chooseVersion'>
+         <text>已选</text>
+         <text>{{goodData.name}} {{goodData.defaultData.memory}} {{goodData.defaultData.color}}</text>
+         <text>x1</text>
+      </view>
+      <view class="service">
+         <view wx:for="{{chooseService}}" wx:key="*this">
+            <image mode="widthFix" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAChklEQVR4Ab3YA6zkUBgF4Lu2bdu2bdu2bdu2Ea1t27ZtW7OnyZnkz9s2r+3emSRfJlf/PaNKfW6pnAgB5aAHbIAH4KFnsAv6QxWI5KS23YkpYDp8AI8DSyGnjiBRYR54hF0wCApCKogHcRg2L3SF9SaBkrgNUhLeiGKjuZmyKR70gc+iRn2nQeqLxdsgESiXIsJKUa+f3SAyRH9QmjQXdbsFFqSgmNwGlGYVrL4mOSkMfOWkvqB8pIEIk9gsyAoO7gDlY0u415GAQRJw4DdE9EOQUPCWe+aAfxIOBaVZGCgNwUAJTbjnfmA6dFAEzSGCwQXWLgdKEkfqeEajog9/G6dY+wokNBlfwPEWRmM4Gx01h9jPulchlMWcapyz3GgcZSOrpgDB4agIER6UhSScd9do/GQjvqYQp+2EoMic+0WJH2oMk4lZ4Q6MdhjifGAhKIj3pCiDxDGZWEiMdwVlRXwd1yEkKJteeIN8ZAGr64W6Ikwni4PTEREivMMrvt/eIIdZJBsoC+VFmM4BQpx3E4LicO1r+fftAMpBmMhwju0rTkNQEa7fLv/Lm2wsrC7CvObrJQgByoXRrNHDaERk46etHxnPERZ/Uafus05Gb8d6+WO0oQYs/s8QxbjnLXn2TcvOjxAElB/c4J6VZRDDFg4s90OIkdzrttkVWmzwUF0fhsgj9skjg1hdTxYDpVla+MH6YwK7nRgmwtTUGKIgfGfdWXZvsPqJMBPEccKt4aLeTKe3nB3E4gfQ2MU/qhpcFHWGub0JzwH7RaHnMA3KQVIIC4pCQ2IoAZPgjlh3GorqeCxRHnaKwtILeGoxdhJqa3s+IqSD9rAa7oh/gNdj2AZd5dncjr+ClBUwCf4HjgAAAABJRU5ErkJggg=='></image>
+            <text>{{item}}</text>
+         </view>
+      </view>
+   </view>
+   <!-- end good_info_choose_version -->
+
+
+   <!-- 概述 及 详细参数 -->
+   <view class='section good_all_info'>
+      <view class="all_info_navbar">
+         <view class='details_bar {{navbarHidden?"":".active"}}' bindtap='detailsActive'>
+            <text>概述</text>
+         </view>
+         <view class='param_bar {{!navbarHidden?"":".active"}}' bindtap='paramActive'>
+            <text>参数</text>
+         </view>
+      </view>
+      <view class='all_info_items'>
+         <view class='details_item' wx:if='{{!navbarHidden}}'>
+            <block wx:for="{{goodData.details_img}}">
+               <view class='details_img'>
+                  <image src='{{item}}' mode='widthFix'></image>
+               </view>
+            </block>
+         </view>
+         <view class="param_item" wx:if="{{navbarHidden}}">
+            <block wx:for="{{goodData.param_img}}">
+               <view class="param_img">
+                  <image src='{{item}}' mode='widthFix'></image>
+               </view>
+            </block>
+         </view>
+      </view>
+   </view>
+   <!-- end good_all_info -->
+
+
+   <!-- 底部加购按钮 -->
+   <view class="section footer">
+      <view class="footer_cart" bindtap='toCart'>
+         <text wx:if="{{cat_allGood_num>0}}">{{cat_allGood_num}}</text>
+         <image src='../../images/cart.png' mode='widthFix'></image>
+      </view>
+      <view class="add_cart" data-id="{{goodData.id}}" bindtap='chooseVersion'>加入购物车</view>
+      <view class="add_cart_now">立即购买</view>
+   </view>
+   <!-- end footer -->
+
+</view>

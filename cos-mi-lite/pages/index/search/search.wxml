@@ -1,0 +1,62 @@
+<!--pages/search/search.wxml-->
+<view class="page">
+   <view class="page__bd">
+
+      <!-- 搜索框 -->
+      <view class="weui-search-bar">
+         <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+               <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+               <input type="text" class="weui-search-bar__input" placeholder="搜索"  value="{{inputVal}}" bindinput="inputTyping" />
+               <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                  <icon type="clear" size="14"></icon>
+               </view>
+            </view>
+         </view>
+         <view class="weui-search-bar__cancel-btn" bindtap="toSearch">搜索</view>
+      </view>
+      <!-- end weui-search-bar -->
+
+      <!-- 实时搜索文本 -->
+      <view class="weui-cells searchbar-result" hidden='{{result_hidden}}'>
+         <block wx:for="{{search_list}}" wx:key="{{index}}">
+            <view class="weui-cell__bd" data-name="{{item.name}}" bindtap="showItemDetail">{{item.name}}</view>
+         </block>
+      </view>
+      <!-- end searchbar-result -->
+
+      <!-- 搜索结果列表 -->
+      <view class="searchbar-result_list"  hidden='{{result_list_hidden}}'>
+         <block wx:for="{{goods_list}}" wx:key="{{index}}">
+            <view class="goods-item" >
+               <image src='{{item.url}}' mode='widthFix' bindtap='showDetail'></image>
+               <view>
+                  <text class="name">{{item.name}}</text>
+                  <text class="brief">{{item.brief}}</text>
+                  <text class="price">{{item.price}}</text>
+                  <text class="oldPrice">{{item.oldPrice}}</text>
+               </view>
+            </view>
+         </block>
+      </view>
+      <!-- end searchbar-result_list -->
+
+      <!-- 搜索标签 -->
+         <view class="search-tages" hidden='{{tages_hidden}}'>
+            <navigator>
+               <text>净水器厨下</text>
+            </navigator>
+            <navigator>
+               <text>小米电视4A</text>
+            </navigator>
+            <navigator>
+               <text>小米笔记本Pro i5</text>
+            </navigator>
+            <navigator>
+               <text>一元不限量</text>
+            </navigator>
+         </view>
+      <!-- end search-tages -->
+
+   </view>
+</view>

@@ -1,0 +1,21 @@
+/* pages/user/user.wxss */
+.divider_line {
+   width: 100%;
+   height: 15rpx;
+   background-color: #ebebeb;
+}
+.img_ma image{
+   width: 60rpx;
+   height: 60rpx;
+   vertical-align: middle;
+   margin-left: 185rpx;
+}
+.weui-cell_access_img image{
+   width: 70rpx;
+   height: 70rpx;
+   vertical-align: middle;
+   padding: 0 5rpx;
+}
+text{
+   color: #888888;
+}

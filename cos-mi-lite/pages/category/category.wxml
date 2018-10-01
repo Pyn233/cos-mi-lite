@@ -1,0 +1,37 @@
+<!--pages/category/category.wxml-->
+
+<view class="container" style="height:{{winHeight}}px;">
+   <!--左侧栏-->
+   <scroll-view class='scroll_left' scroll-y="true">
+      <view class="nav_left">
+         <block wx:for="{{categoryList}}" wx:key="*this">
+            <view class="nav_left_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{index}}" id="{{index}}">{{item[0].name}}</view>
+         </block>
+      </view>
+   </scroll-view>
+   <!-- end  scroll_left -->
+
+   <!--右侧栏-->
+   <scroll-view scroll-y="true" class="scroll_right" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true">
+      <view class="nav_right">
+         <view class='mink' wx:for="{{categoryList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this" bindscroll="scrollTop">
+            <view class='mink_title' id='{{idx}}'>
+               <text>{{itemName[0].name}}</text>
+            </view>
+            <block wx:for="{{itemName}}" wx:for-index="idex" wx:key="*this">
+               <view class="mink_items" wx:if="{{idex>0}}" >
+                  <navigator url="../detail/detail" hover-class="other-navigator-hover">
+                     <view>
+                        <image src="{{item.picture}}"></image>
+                        <view>
+                           <text>{{item.desc}}</text>
+                        </view>
+                     </view>
+                  </navigator>
+               </view>
+            </block>
+         </view>
+      </view>
+   </scroll-view>
+   <!-- end scroll_right -->
+</view>

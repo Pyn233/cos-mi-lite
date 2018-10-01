@@ -1,0 +1,35 @@
+<!--pages/find/find.wxml-->
+
+<view class='containe'>
+   <!-- 顶部导航 -->
+   <view class='navBar'>
+      <block wx:for="{{navBarDate}}" wx:key='*this'>
+         <navigator class='navBar_item' url='{{item.navUrl}}'>
+            <view class='navBar_item_img'>
+               <image src='{{item.imgSrc}}' mode='widthFix'></image>
+            </view>
+            <view class='navBar_item_text'>
+               <text>{{item.text}}</text>
+            </view>
+         </navigator>
+      </block>
+   </view>
+   <!-- end navBar -->
+
+   <!-- 专题 -->
+   <view class='subjects'>
+      <block wx:for="{{subjectsDate}}" wx:key='*this'>
+         <view class='subject_box'>
+            <navigator class='subject_item' url='{{item.subjectUrl}}'>
+               <view>
+                  <image src='{{item.subjectSrc}}' mode='widthFix'></image>
+               </view>
+               <view class='subject_text'>
+                  <text>专题</text>{{item.text}}
+               </view>
+            </navigator>
+         </view>
+      </block>
+   </view>
+   <!-- end subjects -->
+</view>

@@ -1,0 +1,71 @@
+<!--pages/index/index.wxml-->
+
+<view class='container'>
+   <!-- 顶部搜索栏 -->
+   <view class='section searchBar '>
+      <view class='search_box {{isTap?"tap":""}}' >
+         <icon class='search_icon' type='search' size='15'></icon>
+         <input class='in_search' type='text' disabled="true" placeholder='搜索商品' bindtap="toSearch"></input>
+      </view>
+   </view>
+   <!-- end-section search -->
+
+   <!-- 首页轮播图 -->
+   <view class='section section-swiper'>
+      <swiper indicator-dots='true' autoplay='true' circular='ture' style='height:{{Hei}}'>
+         <block wx:for="{{banners}}" wx:key="*this">
+            <swiper-item>
+               <image src="{{item.imgurl}}" class="slide-image" style='width:100%' mode='widthFix' bindload="imageLoad" />
+            </swiper-item>
+         </block>
+      </swiper>
+   </view>
+   <!-- end-section section-swiper -->
+
+   <!-- 首页商品导航分类 -->
+   <view class='section navBar'>
+      <navigator class='nav_list' wx:for="{{navdata}}" wx:key="*this">
+         <image class='nav_image' src='{{item.url}}'></image>
+         <text class='nav_text'>{{item.word}}</text>
+      </navigator>
+   </view>
+   <!-- end-section navBar -->
+
+   <!-- 商品活动块 -->
+   <view class='section activity'>
+      <view class='special_left'>
+         <image src='../../images/leading1.jpg' mode='aspectFill'></image>
+      </view>
+      <view class='special_right'>
+         <image src='../../images/leading2.jpg' mode='aspectFill'></image>
+         <image src='../../images/leading3.jpg' mode='aspectFill'></image>
+      </view>
+   </view>
+   <!-- end-section activity -->
+
+   <!-- 首页商品列表板块 -->
+   <view class='section goods_lists'>
+      <block wx:for='{{goods_list_data}}' wx:key="{{item.id}}">
+         <view class="divider_line"></view>
+         <view class="goods_lists_img">
+         <image  src='{{item.url}}' style='width:100%' mode='widthFix'></image>
+         </view>
+         <view class='section part_lists'>
+            <block wx:for='{{item.section}}' wx:key="index" wx:for-item="product">
+               <view class="part_item" data-id="{{product.id}}" bindtap='toDetails'>
+                  <view class='img'>
+                     <image class="{{product.is_new?'new':''}}" src='{{product.url}}' mode='widthFix'></image>
+                     <image class="img_discount" wx:if="{{product.hasDiscount}}" src='{{product.discountUrl}}' mode='aspectFill'></image>
+                  </view>
+                  <view class='info'>
+                     <text>{{product.name}}</text>
+                     <text>{{product.brief}}</text>
+                     <text>{{product.price}}<text>{{product.oldPrice}}</text></text>
+                  </view>
+               </view>
+            </block>
+         </view>
+      </block>
+   </view>
+   <!-- end-section goods_lists -->
+</view>

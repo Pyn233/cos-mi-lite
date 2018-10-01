@@ -1,0 +1,119 @@
+/* pages/category/category.wxss */
+
+/*隐藏滚动条*/
+::-webkit-scrollbar{    
+  height: 0;
+  width: 0;
+  color: transparent;
+}
+
+.container {
+   flex-direction: row;
+   width: 100%;
+   background-color: #f0f4f7;
+   color: #939393;
+}
+
+/* scroll_left style */
+
+.scroll_left {
+   flex: 1;
+   height: 100%;
+}
+
+.nav_left {
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   text-align: center;
+}
+
+.nav_left .nav_left_items {
+   background: #fff;
+   height: 80rpx;
+   line-height: 80rpx;
+   padding: 15rpx 0;
+   font-size: 29rpx;
+   color: #101010;
+   border-right: 3rpx solid #ebebeb;
+}
+
+.nav_left .nav_left_items.active {
+   font-size: 35rpx;
+   color: #ed1000;
+}
+
+/* scroll_right style */
+
+.scroll_right {
+   flex: 4;
+   height: 100%;
+   box-sizing: border-box;
+   background-color: #f0f4f7;
+}
+
+.mink {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+}
+
+.mink_title {
+   color: #777;
+   width: 100%;
+   height: 140rpx;
+   line-height: 140rpx;
+   text-align: center;
+   font-size: 35rpx;
+}
+
+.mink_title text {
+   position: relative;
+}
+
+.mink_title text::before {
+   position: absolute;
+   content: "";
+   top: 50%;
+   left: -75%;
+   border-top: 1px solid #e0e0e0;
+   width: 30rpx;
+}
+
+.mink_title text::after {
+   position: absolute;
+   content: "";
+   top: 50%;
+   right: -75%;
+   border-top: 1px solid #e0e0e0;
+   width: 30rpx;
+}
+
+.mink_items {
+   width: 33.3%;
+   text-align: center;
+   color: #4a4a4a;
+   background: #fff;
+}
+
+.mink_items image {
+   width: 104rpx;
+   height: 104rpx;
+   margin-top: 15rpx;
+}
+
+.mink_items text {
+   display: block;
+   margin-top: 5rpx;
+   margin-bottom: 10rpx;
+   font-size: 26rpx;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.other-navigator-hover {
+   background: #fff;
+}

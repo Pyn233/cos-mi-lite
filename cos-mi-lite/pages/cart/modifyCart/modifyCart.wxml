@@ -1,0 +1,23 @@
+<!--pages/cart/modifyCart/modifyCart.wxml-->
+<view class='page'>
+   <view>商品和数量</view>
+   <view class='section details' wx:for="{{colorList}}" wx:key="*this">
+      <view class='details_item' data-index='{{index}}' bindtap='bindDetail'>
+         <view>{{name}} {{memory}} {{item.choose}}</view>
+         <view>
+            <text>{{price}}</text>
+            <icon type='{{index==cIndex?"success_no_circle":""}}' size='18'></icon>
+         </view>
+      </view>
+   </view>
+   <view class='section buyNum'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+         <text>购买数量</text>
+         <text>{{array[index]}}</text>
+      </picker>
+   </view>
+   <view class="btn">
+      <button class="btn_t" hover-class="button-hover" bindtap='btnT'>确定</button>
+      <button class="btn_d" type="warn" bindtap='btnD'>删除</button>
+   </view>
+</view>

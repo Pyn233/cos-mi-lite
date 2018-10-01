@@ -1,0 +1,56 @@
+/* pages/find/find.wxss */
+
+/* navBar style */
+.navBar{
+   width: 100%;
+   display: flex;
+   padding: 30rpx 0rpx;
+   background-color: #fff;
+   margin-bottom: 15rpx;
+}
+.navBar_item{
+   flex: 1;
+   border-right: 3rpx solid #ebebeb;
+   box-sizing: border-box;  
+}
+.navBar_item:nth-child(4){
+   border-right: none;
+}
+.navBar_item_img{
+   text-align: center;
+}
+.navBar_item image{
+   width: 55rpx;
+}
+.navBar_item_text{
+   text-align: center;
+   font-size: 29rpx;
+   color: #888888;
+}
+
+/* subjects style */
+.subject_box{
+   margin: 0 15rpx 15rpx 15rpx;
+   border-radius: 10rpx;
+   background-color: #fff;
+   overflow: hidden;
+   box-shadow: 1rpx 2rpx 15rpx #888888;
+}
+.subject_item image{
+   display: block;
+   width: 720rpx;
+}
+.subject_text{
+   height: 110rpx;
+   line-height: 110rpx;
+   padding: 0 50rpx;
+   font-size: 30rpx;
+}
+.subject_text text{
+   background-color: #ff6801;
+   color: white;
+   margin: 0 15rpx;
+font-size:25rpx;
+padding:5rpx 15rpx;
+border-radius:10rpx;
+}

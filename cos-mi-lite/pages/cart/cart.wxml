@@ -1,0 +1,53 @@
+<!--pages/cart/cart.wxml-->
+<view class='container'>
+   <!-- 空购物车 -->
+   <view wx:if="{{cart_have==''}}">
+      <view class='cart_empty'>
+         <view class="cart_img">
+            <image src="../../images/cartT.png" mode="widthFix"></image>
+         </view>
+         <view class="cart_text">购物车还是空的</view>
+         <button class="weui-btn" type="primary" style=' background-color: #ff6801;' bindtap='toLndex'>到小米商城逛逛</button>
+      </view>
+   </view>
+   <!-- end cart_empty -->
+
+   <!-- 有加购的 -->
+   <view wx:else>
+      <view class='cart_have'>
+         <block wx:for="{{cart_have}}" wx:key="*this">
+            <view class='cart_have_item'>
+               <view class='icon_class'>
+                  <icon type='{{item.selectedOne?"success":"circle"}}' color='{{item.selectedOne?"#ff6801":""}}' data-index="{{index}}" bindtap='toChooseOne'></icon>
+               </view>
+               <view class='cart_item_datails'  data-cartindex="{{index}}" bindtap='modifyC'>
+                  <view>
+                     <image src='{{item.imgSrc}}' mode='widthFix'></image>
+                     <text>{{item.name}} {{item.memory}} {{item.color}}</text>
+                  </view>
+                  <view>{{item.selectNum}} ×
+                     <text>{{item.price}}</text>
+                  </view>
+               </view>
+            </view>
+         </block>
+      </view>
+      <!-- end cart_have -->
+
+      <!-- 合计结算 -->
+      <view class='total_buy'>
+         <view class='total_buy_left'>
+            <view>
+               <icon type='{{allSelected?"success":"circle"}}' color='{{allSelected?"#ff6801":""}}' bindtap='toAllchoose'></icon>
+               <text>全选</text>
+            </view>
+            <view>
+               <text>合计 :</text>
+               <text class='total_price'>{{totalPrice}}元</text>
+            </view>
+         </view>
+         <view class='total_buy_right {{toPay?".have":""}}'>结算({{cat_selectDood_num}})</view>
+      </view>
+   </view>
+   <!-- end total_buy -->
+</view>

@@ -1,0 +1,64 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+   <view class="page__bd">
+      <view class="weui-cells weui-cells_after-title">
+         <view class='divider_line'></view>
+         <view class="weui-cell head_info">
+            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+               <image src="../../images/touxiang.jpg" style="width: 50px; height: 50px; display: block" />
+            </view>
+            <view class="weui-cell__bd">
+               <view>黑发银古</view>
+               <view style="font-size: 13px;color: #888888;">小米账号：12345678</view>
+            </view>
+            <view class="weui-cell__bd img_ma">
+               <image src='../../images/ma.png'></image>
+            </view>
+         </view>
+         <view class='divider_line'></view>
+         <view class="weui-cell weui-cell_access">
+            <view class="weui-cell_access_img">
+               <image src='../../images/team.png'></image>
+            </view>
+            <view class="weui-cell__bd">
+               <view style="display: inline-block; vertical-align: middle">我的米粉团<text>（内测版）</text>
+               </view>
+            </view>
+         </view>
+         <view class='divider_line'></view>
+         <view class="weui-cell weui-cell_access">
+            <view class="weui-cell_access_img">
+               <image src='../../images/order.png'></image>
+            </view>
+            <view class="weui-cell__bd">
+               <view style="display: inline-block; vertical-align: middle">我的订单</view>
+            </view>
+         </view>
+         <view class="weui-cell weui-cell_access">
+            <view class="weui-cell_access_img">
+               <image src='../../images/coupon.png'></image>
+            </view>
+            <view class="weui-cell__bd">
+               <view style="display: inline-block; vertical-align: middle">我的优惠券</view>
+            </view>
+         </view>
+         <view class="weui-cell weui-cell_access">
+            <view class="weui-cell_access_img">
+               <image src='../../images/fcode.png'></image>
+            </view>
+            <view class="weui-cell__bd">
+               <view style="display: inline-block; vertical-align: middle">我的F码</view>
+            </view>
+         </view>
+         <view class='divider_line'></view>
+         <view class="weui-cell weui-cell_access">
+            <view class="weui-cell_access_img">
+               <image src='../../images/setting.png'></image>
+            </view>
+            <view class="weui-cell__bd">
+               <view style="display: inline-block; vertical-align: middle">设置</view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>

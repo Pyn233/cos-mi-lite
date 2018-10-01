@@ -1,0 +1,99 @@
+/* pages/cart/cart.wxss */
+
+/* 空购物车 */
+.cart_empty{
+   padding: 100rpx;
+}
+.cart_img{
+   background-color: #d4d4d4;
+   width: 200rpx;
+   height: 200rpx;
+   line-height: 200rpx;
+   text-align: center;
+   border-radius: 100rpx;
+   margin: 0 auto;
+}
+.cart_img image{
+   width: 85rpx;
+   vertical-align: middle;
+}
+.cart_text{
+   text-align: center;
+   padding: 70rpx 0;
+   font-size: 36rpx;
+}
+
+/* 有加购的 */
+.cart_have{
+   margin:15rpx 0 115rpx;
+}
+.cart_have_item{
+   display: flex;
+   align-items: center;
+   padding: 0 30rpx 0 25rpx;
+   height: 90rpx;
+   font-size: 25rpx;
+   background-color: #fff;
+   margin-bottom: 2rpx;
+}
+.icon_class{
+   padding-right: 20rpx;
+}
+.cart_item_datails{
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+}
+.cart_item_datails>view{
+   display: flex;
+   align-items: center;
+}
+.cart_item_datails image{
+   width: 55rpx;
+   margin-right: 20rpx;
+}
+.cart_item_datails>view:last-child{
+   color:#898989;
+   font-size: 20rpx;
+}
+.cart_item_datails>view:last-child text{
+   color:#ff6801;
+   font-size: 25rpx;
+   padding: 6rpx;
+}
+
+/* 合计结算  */
+.total_buy{
+   display: flex;
+   height: 100rpx;
+   width: 100%;
+   justify-content: space-between;
+   position: fixed;
+   bottom: 0;
+   border-top: 2rpx solid #e4e4e4;
+   background-color: #fff;
+   font-size: 30rpx;
+}
+.total_buy_left{
+   display: flex;
+   width: 510rpx;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 30rpx 0 25rpx;
+}
+.total_buy_left text{
+   margin-left: 20rpx;
+}
+.total_price{
+   color: #ff6801;
+}
+.total_buy_right{
+   width:240rpx;
+   line-height: 100rpx;
+   color: white;
+   text-align: center;
+   background-color: #cccccc;
+}
+.total_buy_right.have{
+   background-color: #ff6801;
+}

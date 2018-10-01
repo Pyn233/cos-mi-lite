@@ -1,0 +1,62 @@
+{
+   "pages": [
+      "pages/index/index",
+      "pages/category/category",
+      "pages/find/find",
+      "pages/cart/cart",
+      "pages/user/user",
+      "pages/index/search/search",
+      "pages/goodDetails/goodDetails",
+      "pages/goodDetails/selectGood/selectGood",
+      "pages/cart/modifyCart/modifyCart"
+   ],
+   "window": {
+      "navigationBarBackgroundColor": "#ff6801",
+      "navigationBarTextStyle": "white",
+      "navigationBarTitleText": "cos小米商城Lite",
+      "backgroundColor": "#ebebeb",
+      "backgroundTextStyle": "light"
+   },
+   "tabBar": {
+      "color": "#666666",
+      "selectedColor": "#ff6801",
+      "backgroundColor": "#ffffff",
+      "list": [
+         {
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "/images/index.png",
+            "selectedIconPath": "/images/indexSelected.png"
+         },
+         {
+            "pagePath": "pages/category/category",
+            "text": "分类",
+            "iconPath": "/images/category.png",
+            "selectedIconPath": "/images/categorySelected.png"
+         },
+         {
+            "pagePath": "pages/find/find",
+            "text": "发现",
+            "iconPath": "/images/find.png",
+            "selectedIconPath": "/images/findSelected.png"
+         },
+         {
+            "pagePath": "pages/cart/cart",
+            "text": "购物车",
+            "iconPath": "/images/cart.png",
+            "selectedIconPath": "/images/cartSelected.png"
+         },
+         {
+            "pagePath": "pages/user/user",
+            "text": "我的",
+            "iconPath": "/images/user.png",
+            "selectedIconPath": "/images/userSelected.png"
+         }
+      ]
+   },
+   "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+   },
+   "debug": true
+}

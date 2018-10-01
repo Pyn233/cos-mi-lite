@@ -1,0 +1,249 @@
+/* pages/goodDetails/goodDetails.wxss */
+
+.page {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.section {
+   width: 100%;
+   background-color: #fff;
+   box-sizing: border-box;
+}
+
+.name {
+   padding: 30rpx 30rpx 0;
+   font-size: 32rpx;
+}
+
+.brief {
+   padding: 0 30rpx;
+   font-size: 22rpx;
+   color: #7c7c7c;
+}
+
+.brief text {
+   color: #ff6801;
+}
+
+.price {
+   padding: 0 30rpx;
+   font-size: 32rpx;
+   color: #ff6801;
+}
+
+.price text {
+   padding-left: 15rpx;
+   color: #7c7c7c;
+   font-size: 25rpx;
+   text-decoration: line-through;
+}
+
+/* 参数滑块 */
+
+.details {
+   padding: 20rpx 0;
+   overflow: hidden;
+   white-space: nowrap;
+   height: 140rpx;
+}
+
+.details_param {
+   display: inline-block;
+   text-align: center;
+   padding: 0 5rpx;
+   width: 165rpx;
+   border-right: 3rpx solid #d9d9d9;
+   box-sizing: border-box;
+}
+
+.details_param:last-child {
+   border-right: none;
+}
+
+.details  image {
+   display: block;
+   margin: 0 auto;
+   width: 30rpx;
+}
+
+.details_param view:first-of-type {
+   font-size: 25rpx;
+}
+
+.details_param view:last-of-type {
+   color: #7c7c7c;
+   font-size: 20rpx;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+/* 促销 版本 及服务 */
+
+.good_info_choose_version {
+   margin: 15rpx 0;
+   padding: 0 30rpx;
+   font-size: 25rpx;
+}
+
+.good_info_choose_version>view {
+   position: relative;
+   height: 110rpx;
+   line-height: 110rpx;
+   border-bottom: 2rpx solid #d9d9d9;
+}
+
+.good_info_choose_version>view:last-child {
+   border-bottom: none;
+}
+
+.good_info_choose_version>view:nth-child(2n+1)::after {
+   content: "";
+   position: absolute;
+   top: 50rpx;
+   right: 0;
+   border-top: 2rpx solid #999;
+   border-right: 2rpx solid #999;
+   width: 15rpx;
+   height: 15rpx;
+   transform: rotate(45deg);
+}
+
+.good_info_choose_version>view>text:first-of-type{
+   color: #888;
+}
+
+.good_info_choose_version>view>text:nth-of-type(2){
+   margin-left: 50rpx;
+}
+
+.address text:last-child {
+   color: #ff6801;
+   margin-left: 15rpx;
+}
+
+.sales text:nth-child(2) {
+   color: #ff6801;
+   font-size: 20rpx;
+   border: 2rpx solid #ff6801;
+   border-radius: 5rpx;
+   margin-right: 10rpx;
+   padding: 5rpx 15rpx;
+}
+
+.version text:last-child {
+   color: #888;
+   margin-left: 20rpx;
+}
+
+.service {
+   display: flex;
+}
+
+.service view {
+   display: flex;
+   align-items: center;
+   font-size: 20rpx;
+   margin-right: 20rpx;
+}
+
+.service image {
+   margin-right: 10rpx;
+   width: 30rpx;
+}
+
+/* 概述 及 详细参数 */
+.good_all_info{
+   margin-bottom: 115rpx;
+}
+.all_info_navbar {
+   display: flex;
+   border-bottom: 3rpx solid #e5e5e5;
+   box-sizing: border-box;
+}
+
+.all_info_navbar view {
+   flex: 1;
+   height: 90rpx;
+   line-height: 90rpx;
+   text-align: center;
+}
+
+.all_info_navbar view text {
+   padding: 20rpx 0;
+   height: 100%;
+   font-size: 25rpx;
+   color: #888;
+}
+
+.all_info_navbar view.active text {
+   color: #ff6801;
+   border-bottom: 5rpx solid #ff6801;
+   box-sizing: border-box;
+}
+
+.all_info_items image {
+   display: block;
+   width: 100%;
+}
+
+/* 底部加购按钮 */
+.section.footer{
+   background-color: transparent;
+}
+.footer {
+   position: fixed;
+   display: flex;
+   bottom: 0;
+   height: 100rpx;
+   border-top: .5rpx solid #d5d5d5;
+}
+
+.footer_cart {
+   position: relative;
+   width: 100rpx;
+   background-color: #fff;
+   border: .5rpx solid #d5d5d5;
+   border-top: none;
+   border-radius: 8rpx;
+   box-sizing: border-box;
+}
+
+.footer_cart text {
+   position: absolute;
+   top: 16rpx;
+   right:  12rpx;
+   width: 32rpx;
+   height: 32rpx;
+   font-size: 16rpx;
+   text-align: center;
+   line-height: 32rpx;
+   border-radius: 16rpx;
+   color: white;
+   background-color: #ff6801;
+}
+
+.footer_cart image {
+   width: 50rpx;
+   margin: 25rpx;
+}
+
+.add_cart, .add_cart_now {
+   flex: 1;
+   color: white;
+   font-size: 32rpx;
+   line-height: 100rpx;
+   text-align: center;
+}
+
+.add_cart {
+   background-color: #ff6801;
+}
+
+.add_cart_now {
+   background-color: #ea5e3a;
+}
